@@ -6,6 +6,8 @@ Gym is a toolkit for developing and comparing reinforcement learning algorithms.
 # Table of Contents
 * [Quickstart](#quickstart)
 * [Summary](#summary)
+* [Directory Structure](#directory-structure)
+* [Register a Custom Environment](#register-a-custom-environment)
 * [Virtual Env](#virtual-env)
   * [Create Virtual Environment](#create-virtual-environment)
   * [Load the Virtual Environment](#load-the-virtual-environment)
@@ -27,6 +29,37 @@ env.close()
 
 # Summary
 It is recommended that you install the gym and any dependencies in a [virtualenv](https://pythonbasics.org/virtualenv/).
+
+# Directory Structure
+```
+gym_dir
+  - __init__.py # Register environments here
+  - envs
+    - __init__.py # Import the environment and any custom libraries here
+    - custom_env.py # Define the environment here
+  
+
+
+```
+
+# Register a Custom Environment
+```
+gym_dir
+  - envs
+  - __init__.py # Register environments here
+      
+
+# To register:
+from gym.envs.registration import register
+
+register(
+    id='<your_env_id>',
+    entry_point='gym_dir.envs:CustomEnv',
+    max_episode_steps=<your_max_steps>,
+)
+```
+
+# Register an Environment
 
 # Virtual Env
 Source: [virtualenv](https://pythonbasics.org/virtualenv/).

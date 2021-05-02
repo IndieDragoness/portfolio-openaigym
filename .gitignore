@@ -6,6 +6,11 @@ __pycache__/
 # Microsoft Visual Studio
 *.vs
 
+# ML
+checkpoint
+*.h5f*
+fitted.model/
+
 # C extensions
 *.so
 
